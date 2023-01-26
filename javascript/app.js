@@ -10,7 +10,7 @@ const container = document.querySelector(".shop-container");
 const list = document.querySelector(".shop-list");
 const clearBtn = document.querySelector('.clear-btn');
 
-// --edit option
+// edit option
 let editElement;
 let editFlag = false;
 let editID = "";
@@ -20,7 +20,7 @@ let editID = "";
 // event listener
 //=============================
 
-// --submit form
+// submit form
 form.addEventListener("submit", addItem);
 // clear list
 clearBtn.addEventListener("click", clearItems);
@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", setupItems);
 // functions
 //=============================
 
-// --add item
+// add item
 function addItem(e) {
   e.preventDefault();
   const value = shopping.value;
@@ -57,6 +57,8 @@ function addItem(e) {
         </button>
       </div>
     `;
+    // add event listener to both buttons
+    
   }
 }
 
