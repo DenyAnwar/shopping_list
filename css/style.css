@@ -206,6 +206,7 @@ Shopping List
   border-radius: 0.25rem;
   letter-spacing: var(--spacing);
   text-transform: capitalize;
+  transition: var(--transition);
 }
 .alert-danger {
   color: #721c24;
