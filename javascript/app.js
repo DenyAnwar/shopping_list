@@ -6,8 +6,8 @@ const form = document.querySelector(".shopping-form");
 const alert = document.querySelector(".alert");
 const shopping = document.getElementById("shopping");
 const submitBtn = document.querySelector(".submit-btn");
-const container = document.querySelector(".shop-container");
-const list = document.querySelector(".shop-list");
+const container = document.querySelector(".shopping-container");
+const list = document.querySelector(".shopping-list");
 const clearBtn = document.querySelector('.clear-btn');
 
 // edit option
@@ -43,7 +43,7 @@ function addItem(e) {
     let attr = document.createAttribute("data-id");
     attr.value = id;
     element.setAttributeNode(attr);
-    element.classList.add("grocery-item") // css
+    element.classList.add("shopping-item") // css
     element.innerHTML = `
       <p class="title">${value}</p>
       <div class="btn-container">
@@ -58,7 +58,30 @@ function addItem(e) {
       </div>
     `;
     // add event listener to both buttons
-    
+    const deleteBtn = element.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", deleteItem);
+    const editBtn = element.querySelector(".edit-btn");
+    editBtn = element.addEventListener("click", editItem);
+
+    // append child
+    list.appendChild(element);
+    // display alert
+    displayAlert("item added to the list", "success");
+    // show container
+    container.classList.add("show-container");
+    // set local storage
+    addToLocalStorage(id, value);
+    // set back to default
+    setBackToDefault();
+  } else if (value !== "" && editFlag) {
+    displayAlert("value changed", "success");
+
+    // edit local storage
+    editLocalStorage(editID, value);
+    // set back to default
+    setBackToDefault();
+  } else {
+    displayAlert("please enter value", "danger");
   }
 }
 
