@@ -19,7 +19,7 @@ cheers.
     # clone the project to your local computer
     git clone https://github.com/DenyAnwar/shopping_list.git
     ```
-1.  **Step 2.**
+2.  **Step 2.**
     Run project in web browser
     ```sh
     # open index.html
